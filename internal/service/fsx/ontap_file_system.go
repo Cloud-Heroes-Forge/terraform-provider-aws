@@ -74,7 +74,7 @@ func ResourceOntapFileSystem() *schema.Resource {
 							Type:         schema.TypeInt,
 							Optional:     true,
 							Computed:     true,
-							ValidateFunc: validation.IntBetween(0, 80000),
+							ValidateFunc: validation.IntBetween(0, 160000),
 						},
 						"mode": {
 							Type:         schema.TypeString,
@@ -207,7 +207,7 @@ func ResourceOntapFileSystem() *schema.Resource {
 			"throughput_capacity": {
 				Type:         schema.TypeInt,
 				Required:     true,
-				ValidateFunc: validation.IntInSlice([]int{128, 256, 512, 1024, 2048}),
+				ValidateFunc: validation.IntInSlice([]int{128, 256, 512, 1024, 2048, 4096}),
 			},
 			"vpc_id": {
 				Type:     schema.TypeString,
